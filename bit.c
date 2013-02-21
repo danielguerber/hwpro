@@ -23,17 +23,10 @@ int bitXor(int x, int y) {
 }
 
 int isEqual(int x, int y) {
-	int var1 = ~x;
-	int var2 = ~y;
+	int var1 = x ^ y;
+	int var2 = !var1;
 	
-	int var3 = x & y;
-	int var4 = var1 & var2;
-	
-	int var5 = var3 | var4;
-	
-	int var6 = var5 + ;
-	
-	return var6;
+	return var2;
 }
 
 int main() {
