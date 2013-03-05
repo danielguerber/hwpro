@@ -30,18 +30,16 @@ int isEqual(int x, int y) {
 }
 
 int evenBits(void) {
-	int val1 = 0xAA;
+	int val1 = 0x55;
 	int val2 = (val1 << 8) + val1;
 	int val3 = (val2 << 16) + val2;
 	return val3;
 }
 
 int bitMask(int highbit, int lowbit) {
-	int val1 = -1;
-	int val2 = val1 << (highbit + 1);
-	int val3 = val1 << lowbit;
-	int val4 = val2 ^ val3;
-	return val4;
+	int val1 = (2<<highbit) + ~0;
+	int val2 = (1<<lowbit) + ~0;
+	return val1 & ~val2;
 }
 
 int bitParity(int x) {
@@ -51,7 +49,7 @@ int bitParity(int x) {
 	var1 ^= (var1 >> 4);
 	var1 ^= (var1 >> 2);
 	var1 ^= (var1 >> 1);
-	return var1;
+	return var1&1;
 }
 
 int main() {
